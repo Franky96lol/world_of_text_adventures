@@ -1,0 +1,32 @@
+{
+  "name": "world_of_text_adventures",
+  "version": "0.0.1",
+  "description": "A simple Node app built on fastify, instantly up and running.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "fastify": "^3.25.0",
+    "fastify-formbody": "^5.2.0",
+    "fastify-static": "^4.5.0",
+    "handlebars": "^4.7.7",
+    "node-telegram-bot-api": "^0.56.0",
+    "point-of-view": "^4.16.0"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/glitch-hello-node"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ],
+  "devDependencies": {},
+  "author": "Frank Yohan Rodriguez Perez"
+}
