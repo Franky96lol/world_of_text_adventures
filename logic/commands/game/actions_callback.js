@@ -58,13 +58,18 @@ global.bot.on("callback_query", data => {
           global.bot.users[user].selector = "construction";
         } else global.bot.users[user].selector = "action";
       } else {
-        if (global.bot.users[user].selector == "action") {
-          global.bot.users[user].selector = "attack";
-        } else global.bot.users[user].selector = "action";
+        if (global.bot.users[user].selector == "attack") {
+          global.bot.users[user].selector = "action";
+        } else global.bot.users[user].selector = "attack";
+        console.log(global.bot.users[user].selector);
       }
+
+      if (global.bot.users[user].inline != 4)
+        global.bot.users[user].inline = 4;
+      else global.bot.users[user].inline = 6;
+
       selector = _selector[global.bot.users[user].selector];
-      if (global.bot.users[user].inline != 4) global.bot.users[user].inline = 4;
-      else global.bot.users[user].inline = 8;
+
       break;
     case "a_up":
       switch (global.bot.users[user].selector) {
@@ -173,7 +178,6 @@ global.bot.on("callback_query", data => {
         ]
       ]
     };
-    global.bot.users[user].inline = 5;
   } else {
     let textures = helper.readFile(config.DB + "/textures.json");
     if (global.bot.users[user].admin.menu == "main") {
