@@ -57,7 +57,7 @@ global.bot.on("callback_query", data => {
       let dmg = "" , heal = "";
       if(skill.dmg != 0){
         dmg += "🗡️ **Daño**: (" + 
-          skill.dmg + "% DCA) + " + skill.base_dmg + "\n";
+          skill.dmg + "% DCA) + " + skill.dmg_base + "";
       }
       message =
         helper.parseAttackType(skill.type) +
