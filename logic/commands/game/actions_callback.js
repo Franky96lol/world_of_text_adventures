@@ -61,7 +61,7 @@ global.bot.on("callback_query", data => {
         if (global.bot.users[user].selector == "attack") {
           global.bot.users[user].selector = "action";
         } else global.bot.users[user].selector = "attack";
-        console.log(global.bot.users[user].selector);
+  
       }
 
       if (global.bot.users[user].inline != 4)
@@ -246,6 +246,7 @@ global.bot.on("callback_query", data => {
     global.bot.editMessageText(global.bot.users[user].message, {
       chat_id: data.message.chat.id,
       message_id: data.message.message_id,
+      parse_mode : "Markdown",
       reply_markup: opts
     });
   }

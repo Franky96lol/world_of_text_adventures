@@ -22,9 +22,12 @@ const express = require("express");
 const app = express();
 
 app.use(function(req, res) {
-  res.json({ mess: "o hai!" }).res(200);
+  res.send({ mess: "o hai!" }).status(200);
 });
-const server= app.listen(config.PORT);
+const server = app.listen(config.PORT);
 
+const request = require("requestify");
+
+setInterval(() => request.get("https://fireshoot-bot.glitch.me"), 120000);
 
 console.log("Bot started...");

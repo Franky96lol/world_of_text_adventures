@@ -1,0 +1,19 @@
+{
+  "name": "Espada de Entrenar",
+  "desc": "Espada sin filo , hecha para entrenar.",
+  "type": "weapon",
+  "class": "warrior",
+  "quality": 1,
+  "level": 1,
+  "hp": 0,
+  "mp": 0,
+  "hp_reg": 0,
+  "mp_reg": 0,
+  "dmg": 2,
+  "def": 0,
+  "crit": 0,
+  "dodge": 0,
+
+  "gold_extra": 0,
+  "xp_extra": 0
+}

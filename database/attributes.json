@@ -1,0 +1,10 @@
+{"hp" : 2,
+"hp_reg" : 0.05,
+"mp" : 2,
+"mp_reg" : 0.05,
+"dmg" : 0.25,
+"def" : 0.10,
+"crit" : 0.05,
+"dodge" : 0.05,
+"xp_extra" : 0.04,
+"gold_extra" : 0.04}

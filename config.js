@@ -5,7 +5,7 @@ const config = {
     DIRNAME : __dirname, //directorio raiz
     DB : __dirname + '/database', //path a la base de datos
     LOGIC : __dirname + '/logic', //path a la logica
-    TOKEN : '5070405408:AAFx_VaI-C6zAva05brGe-CpGD8FtlDo640',
+    TOKEN : process.env.TOKEN,
     server : {
     	    version : 'v0.0.1'
     }

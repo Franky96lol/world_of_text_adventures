@@ -105,7 +105,7 @@ global.bot.onText(/(\/start|\/login)/, data => {
           def: 0,
           crit: 0,
           dodge: 0,
-          speed: 0,
+
           gold_extra: 0,
           xp_extra: 0
         }
@@ -170,7 +170,7 @@ global.bot.onText(/(\/start|\/login)/, data => {
         config.DB + "/accounts/" + user + ".json"
       );
     //console.log(global.bot.users);
-    global.bot.sendMessage(user, gameSurface(user), { reply_markup: opts });
+    global.bot.sendMessage(user, gameSurface(user), {parse_mode: "Markdown" , reply_markup: opts });
   }
 });
 
