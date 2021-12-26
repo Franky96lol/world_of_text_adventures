@@ -1,0 +1,16 @@
+{
+  "name" : "Ataque Basico",
+  "desc" : "Ataque basico del guerrero usando su arma.",
+  "class": "warrior",
+  "type" : "attack",
+  "traspass" : 1,
+  "target" : "enemies",
+  "attack_type" : "",
+  "distance" : 1,
+  "dmg" : 100,
+  "dmg_base" : 0,
+  "heal" : 0,
+  "heal_base" : 0,
+  "cd" : 1000,
+  "speed" : 0
+}

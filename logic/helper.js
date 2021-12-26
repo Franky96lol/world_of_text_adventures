@@ -18,6 +18,25 @@ function writeFile(path, file) {
   fs.writeFileSync(path, JSON.stringify(file));
 }
 
+function parseAttackType(type){
+   const types = {
+     attack : '🗡️',
+     projectil : '☄',
+     aoe : '💫'
+   }
+   return types[type];
+}
+
+function parseTarget(target){
+   const targets = {
+     self : "Heroe 👤",
+     enemies : "Enemigos ⚔️",
+     allies: "Aliados 🛡️"
+     
+   }
+   return targets[target];
+}
+
 function parseSta(sta) {
   const stad = {
     hp: "❤️ Vida",
@@ -141,5 +160,7 @@ module.exports = {
   parseHeroIcon,
   parseFaction,
   parseClass,
-  parseSta
+  parseSta,
+  parseAttackType,
+  parseTarget
 };

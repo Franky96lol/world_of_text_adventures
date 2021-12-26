@@ -3,13 +3,17 @@ const config = require("./config");
 const helper = require(config.LOGIC + "/helper.js");
 const bot = new TelegramBot(config.TOKEN, { polling: true });
 const fs = require("fs");
-
+const CombatEngine = new (require(config.LOGIC + "/engine/combat_engine.js"))();
 const WorldEngine = require(config.LOGIC + "/engine/map_generator.js");
 //creating the globals var
 
 global.bot = bot;
 bot.createAcc = {};
 bot.users = {};
+global.attacks = {};
+global.skills = {};
+
+CombatEngine.loadSkills();
 
 global.World = helper.readFile(config.DB + "/world_map.json");
 

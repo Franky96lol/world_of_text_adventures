@@ -111,8 +111,8 @@ global.bot.onText(/(\/start|\/login)/, data => {
         }
       },
       selector: "action",
-      isCombating: false,
-      isCrafting: false,
+      isCombat: false,
+      isCraft: false,
       isArena: false,
       donation_points: 0,
       teleport_cd: 0

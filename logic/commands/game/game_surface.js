@@ -8,7 +8,7 @@ const _stats = require(config.LOGIC + "/engine/stats_engine.js");
 function gameSurface(user) {
   let acc = global.bot.users[user];
   let stats = _stats.stats(user);
-  console.log(stats);
+  
   let textures = helper.readFile(config.DB + "/textures.json");
   let banner = "";
   if (acc.acctype == 2)
@@ -35,10 +35,10 @@ function gameSurface(user) {
     let enemies = [];
     let alies = [];
     for(let pj in poa){
-      if(poa[pj].faction == acc.faction && alies.length < 10){
+      if(poa[pj].faction == acc.faction && poa[pj].id != user && alies.length < 10){
         alies.push(poa[pj]);
       }
-      else if(poa[pj].faction != acc.faction && enemies.length < 10){
+      else if(poa[pj].faction != acc.faction && poa[pj].id != user && enemies.length < 10){
         enemies.push(poa[pj]);
       }
     }
@@ -46,8 +46,8 @@ function gameSurface(user) {
     for(let x = 0 ; x < _max ; x++){
          let ally = '', enem = '' , ally2 = '' , enem2= '';
          if(alies[x] != undefined && alies[x].id != user){
-           ally = helper.parseHeroIcon(alies[x].id) + " " + alies[x].heroname + 
-             "\t\t\t\t\t\t\t\t\t\t";
+           ally = helper.parseHeroIcon(alies[x].id) + " `" + alies[x].heroname + 
+             "`\t\t\t\t\t\t\t\t\t\t";
            ally2 = "❤️: " + Math.floor(alies[x].stats.hp) + "/" + Math.floor(_stats.stats(alies[x].id).hp) +
              "\t\t\t\t\t\t\t\t\t\t";
          }else{
@@ -55,8 +55,8 @@ function gameSurface(user) {
            ally2 = ally;
          }
          if(enemies[x] != undefined && enemies[x].id != user){
-           enem = helper.parseHeroIcon(enemies[x].id) + " " + enemies[x].heroname + 
-             "\n";
+           enem = helper.parseHeroIcon(enemies[x].id) + " `" + enemies[x].heroname + 
+             "`\n";
            enem2 = "❤️: " + Math.floor(enemies[x].stats.hp) + "/" + Math.floor(_stats.stats(enemies[x].id).hp) +
              "\n";
          }else{

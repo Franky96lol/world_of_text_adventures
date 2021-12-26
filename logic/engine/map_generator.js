@@ -1,5 +1,6 @@
 const config = require("../../config.js");
 const helper = require(config.LOGIC + "/helper.js");
+const textures = helper.readFile(config.DB + "/textures.json");
 
 class Map {
   constructor(floors, x, y) {
@@ -31,7 +32,6 @@ class Map {
   }
 
   addGFX(pos, _map, user) {
-    let textures = helper.readFile(config.DB + "/textures.json");
     let gfxMap = "\t \t \t \t \t \t \t \t \t \t";
     let poa = this.getPlayersOnArea(pos, global.bot.users);
     let posx = 0,
@@ -51,7 +51,7 @@ class Map {
             poab = helper.parseHeroIcon(pj.id);
           }
         }
-        if (poab != false && (x != pos.x && y != pos.y)) {
+        if (poab != false && (x != pos.x || y != pos.y)) {
           gfxMap += poab;
         } else if (pos.x != x || pos.y != y) {
           gfxMap += textures[_map[pos._floor][x][y].t];
@@ -75,7 +75,6 @@ class Map {
         players[pj].pos.y > pos.y - 5 &&
         players[pj].pos.y < pos.y + 6 &&
         players[pj].pos._floor == pos._floor
-
       ) {
         poa.push(players[pj]);
       }

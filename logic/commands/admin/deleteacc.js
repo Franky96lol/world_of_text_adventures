@@ -17,6 +17,10 @@ global.bot.onText(/^\/delete.*/, data => {
           for (let acc of accs) {
             fs.unlinkSync(config.DB + "/accounts/" + acc);
           }
+          let heros = fs.readdirSync(config.DB + '/heros/');
+          for(let hero of heros){
+            fs.unlinkSync(config.DB + '/heros/'+ hero);
+          }
           
           global.bot.sendMessage(user, "Base de datos de usuarios borrada!");
           break;
